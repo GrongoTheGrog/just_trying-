@@ -22,3 +22,5 @@ winner = 0;
 
 win = true;
 
+win_x = 0;
+win_cir = 0;

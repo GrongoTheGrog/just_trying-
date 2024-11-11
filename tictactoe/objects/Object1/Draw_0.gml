@@ -98,11 +98,18 @@ if scr_win(){
 	
 			ds_list_add(list_win, [moves, time, winner]);
 		
+			if winner = 1{
+				win_x++;
+			}else{
+				win_cir++;	
+			}
+		
 			moves = 0;
 			winner = 0;
 			time = 0;
 			time_true = false;
 			win = false;
+		
 		}
 
 }
@@ -112,6 +119,8 @@ if scr_win(){
 for(var _i = 0; _i < ds_list_size(list_win); _i++){
 	if ds_list_size(list_win) >= 1{
 		
+		draw_set_font(font2);
+		
 		var _mult = 70;
 		
 		draw_set_color(c_white);
@@ -120,7 +129,7 @@ for(var _i = 0; _i < ds_list_size(list_win); _i++){
 			draw_text(600, 120 + _mult * _i, "Time: " + string(list_win[| _i][1] / 60) + " seconds");
 			draw_text(600, 140 + _mult * _i, "Winner: ")
 	
-	
+			
 		if list_win[| _i][2] = 1{
 
 			draw_sprite_ext(Sprite1, 0, 690, 140 + _i * _mult, 0.1, 0.1, 1, c_white, 1);
@@ -130,8 +139,25 @@ for(var _i = 0; _i < ds_list_size(list_win); _i++){
 			draw_sprite_ext(Sprite1_1, 0, 690, 140 + _i * _mult, 0.1, 0.1, 1, c_white, 1);
 	
 		}
+		
 	}
 }
 
 scr_win();
+
+draw_set_font(font1);
+
+draw_text(100, 600, "Time: " + string(time / 60) + " seconds");
+draw_text(100, 650, "Moves: " + string(moves));
+
+draw_sprite_ext(Sprite1_1, 0, 850, 320, 0.5, 0.5, 1, c_white, 1);
+
+draw_text(850 + 32, 430, win_cir);
+
+draw_sprite_ext(Sprite1, 0, 1130, 320, 0.5, 0.5, 1, c_white, 1);
+
+draw_text(1130 + 32, 430, win_x);
+
+
+
 

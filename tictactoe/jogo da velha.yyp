@@ -34,6 +34,8 @@
   },
   "name":"jogo da velha",
   "resources":[
+    {"id":{"name":"font1","path":"fonts/font1/font1.yy",},},
+    {"id":{"name":"font2","path":"fonts/font2/font2.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"obj_cir","path":"objects/obj_cir/obj_cir.yy",},},
     {"id":{"name":"obj_x","path":"objects/obj_x/obj_x.yy",},},
